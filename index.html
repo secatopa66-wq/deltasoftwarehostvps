@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delta Software - Panel de Control</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <div class="app-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-svg">
+                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="4" width="52" height="52" rx="12" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M30 8 L30 52 M8 30 L52 30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="30" cy="30" r="10" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M20 20 L40 40 M20 40 L40 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span>Delta Software</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active" id="navVps"><i class="fas fa-server"></i><span>VPS</span></a>
+                <a href="#" id="navDigitalizador"><i class="fas fa-file-alt"></i><span>Digitalizador</span></a>
+                <a href="#" id="navApis"><i class="fas fa-cloud-upload-alt"></i><span>APIs</span></a>
+                <a href="#" id="navLanding"><i class="fas fa-rocket"></i><span>Landing Page</span></a>
+                <a href="#" id="navHosting"><i class="fas fa-globe"></i><span>Hosting</span></a>
+                <a href="#" id="navAnalitica"><i class="fas fa-chart-line"></i><span>Analítica</span></a>
+                <a href="#" id="navConfiguracion"><i class="fas fa-cog"></i><span>Configuración</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#"><i class="fas fa-sign-out-alt"></i><span>Cerrar sesión</span></a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <span class="page-title" id="pageTitle">VPS - Servidores</span>
+                </div>
+                <div class="topbar-right">
+                    <div class="currency-selector">
+                        <button class="currency-btn active" data-currency="usd">USD</button>
+                        <button class="currency-btn" data-currency="pen">PEN</button>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+            </header>
+
+            <section class="content-body">
+
+                <div id="vpsSection" class="vps-container">
+                    <div class="section-header vps-header">
+                        <h2><i class="fas fa-server"></i> Servidores VPS</h2>
+                        <p>Elige la opción que mejor se adapte a tus necesidades de infraestructura</p>
+                    </div>
+
+                    <div class="vps-type-selector">
+                        <div class="type-grid">
+                            <div class="type-card featured" data-type="vps-a" id="typeVpsA">
+                                <div class="type-icon">
+                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="6" y="8" width="52" height="16" rx="4" fill="currentColor"/>
+                                        <circle cx="38" cy="16" r="2.4" fill="#ffffff"/>
+                                        <circle cx="46" cy="16" r="2.4" fill="#ffffff"/>
+                                        <circle cx="54" cy="16" r="2.4" fill="#ffffff"/>
+                                        <rect x="6" y="28" width="52" height="16" rx="4" fill="currentColor"/>
+                                        <circle cx="38" cy="36" r="2.4" fill="#ffffff"/>
+                                        <circle cx="46" cy="36" r="2.4" fill="#ffffff"/>
+                                        <circle cx="54" cy="36" r="2.4" fill="#ffffff"/>
+                                        <rect x="6" y="48" width="52" height="10" rx="4" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <h4>VPS</h4>
+                                <div class="type-badge premium">RECOMENDADO</div>
+                                <p>Gestión Avanzada e Identidad Restringida</p>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> 16 GB RAM / 6 vCPU</li>
+                                    <li><i class="fas fa-check-circle"></i> 320 GB NVMe</li>
+                                    <li><i class="fas fa-check-circle"></i> IP pública dedicada + Anti-DDoS</li>
+                                    <li><i class="fas fa-check-circle"></i> Dominio + SSL (12 meses)</li>
+                                    <li><i class="fas fa-check-circle"></i> Copias de seguridad diarias</li>
+                                    <li><i class="fas fa-check-circle"></i> Monitoreo 24/7 con alertas</li>
+                                    <li><i class="fas fa-check-circle"></i> Firewall perimetral</li>
+                                    <li><i class="fas fa-check-circle"></i> Zero Trust + Teleport</li>
+                                    <li><i class="fas fa-check-circle"></i> VPN de acceso administrativo</li>
+                                    <li><i class="fas fa-check-circle"></i> Logs centralizados y auditoría</li>
+                                    <li><i class="fas fa-check-circle"></i> Notificaciones (4,000 correos/mes)</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte IT 24/7 (12 meses)</li>
+                                </ul>
+                                <button class="btn-select-type">Ver Planes</button>
+                            </div>
+
+                            <div class="type-card" data-type="vps-b" id="typeVpsB">
+                                <div class="type-icon">
+                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="6" y="10" width="52" height="18" rx="4" fill="currentColor"/>
+                                        <circle cx="38" cy="19" r="2.6" fill="#ffffff"/>
+                                        <circle cx="47" cy="19" r="2.6" fill="#ffffff"/>
+                                        <rect x="6" y="36" width="52" height="18" rx="4" fill="currentColor"/>
+                                        <circle cx="38" cy="45" r="2.6" fill="#ffffff"/>
+                                        <circle cx="47" cy="45" r="2.6" fill="#ffffff"/>
+                                    </svg>
+                                </div>
+                                <h4>VPS</h4>
+                                <div class="type-badge">OPTIMIZADO</div>
+                                <p>Gestión Estándar y Capacidad Optimizada</p>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> 8 GB RAM / 4 vCPU</li>
+                                    <li><i class="fas fa-check-circle"></i> 160 GB NVMe</li>
+                                    <li><i class="fas fa-check-circle"></i> IP pública dedicada + Anti-DDoS</li>
+                                    <li><i class="fas fa-check-circle"></i> Dominio + SSL (12 meses)</li>
+                                    <li><i class="fas fa-check-circle"></i> Copias de seguridad diarias</li>
+                                    <li><i class="fas fa-check-circle"></i> Monitoreo 24/7 con alertas</li>
+                                    <li><i class="fas fa-check-circle"></i> Firewall perimetral</li>
+                                    <li><i class="fas fa-check-circle"></i> Zero Trust + MFA</li>
+                                    <li><i class="fas fa-check-circle"></i> Logs centralizados</li>
+                                    <li><i class="fas fa-check-circle"></i> VPN de acceso administrativo</li>
+                                    <li><i class="fas fa-check-circle"></i> Notificaciones (4,000 correos/mes)</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte IT (12 meses)</li>
+                                </ul>
+                                <button class="btn-select-type">Ver Planes</button>
+                            </div>
+
+                            <div class="type-card" data-type="vps-c" id="typeVpsC">
+                                <div class="type-icon">
+                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="6" y="8" width="52" height="26" rx="4" fill="currentColor"/>
+                                        <rect x="6" y="38" width="52" height="18" rx="4" fill="currentColor"/>
+                                        <circle cx="38" cy="47" r="3" fill="#ffffff"/>
+                                        <circle cx="47" cy="47" r="3" fill="#ffffff"/>
+                                    </svg>
+                                </div>
+                                <h4>VPS</h4>
+                                <div class="type-badge">ESENCIAL</div>
+                                <p>Gestión Esencial para proyectos pequeños</p>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> 4 GB RAM / 2 vCPU</li>
+                                    <li><i class="fas fa-check-circle"></i> 80 GB NVMe</li>
+                                    <li><i class="fas fa-check-circle"></i> IP pública dedicada</li>
+                                    <li><i class="fas fa-check-circle"></i> Dominio + SSL (12 meses)</li>
+                                    <li><i class="fas fa-check-circle"></i> Copias de seguridad diarias</li>
+                                    <li><i class="fas fa-check-circle"></i> Monitoreo 24/7</li>
+                                    <li><i class="fas fa-check-circle"></i> Firewall básico</li>
+                                    <li><i class="fas fa-check-circle"></i> Notificaciones (2,000 correos/mes)</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte IT (12 meses)</li>
+                                </ul>
+                                <button class="btn-select-type">Ver Planes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="planesVpsA" class="planes-container" style="display:none;">
+                        <div class="planes-header">
+                            <button class="btn-back" id="backFromVpsA"><i class="fas fa-arrow-left"></i> Volver</button>
+                            <h3>
+                                <span class="planes-header-icon">
+                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="6" y="8" width="52" height="16" rx="4" fill="currentColor"/>
+                                        <circle cx="38" cy="16" r="2.4" fill="#ffffff"/>
+                                        <circle cx="46" cy="16" r="2.4" fill="#ffffff"/>
+                                        <circle cx="54" cy="16" r="2.4" fill="#ffffff"/>
+                                        <rect x="6" y="28" width="52" height="16" rx="4" fill="currentColor"/>
+                                        <circle cx="38" cy="36" r="2.4" fill="#ffffff"/>
+                                        <circle cx="46" cy="36" r="2.4" fill="#ffffff"/>
+                                        <circle cx="54" cy="36" r="2.4" fill="#ffffff"/>
+                                        <rect x="6" y="48" width="52" height="10" rx="4" fill="currentColor"/>
+                                    </svg>
+                                </span>
+                                VPS - Gestión Avanzada
+                            </h3>
+                            <p>16 GB RAM / 6 vCPU / 320 GB NVMe</p>
+                        </div>
+                        <div class="pricing-grid">
+                            <div class="plan-card monthly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">MENSUAL</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-calendar-alt"></i> Mensual
+                                </div>
+                                <div class="plan-price" data-usd="$891" data-pen="S/890.69">
+                                    S/890.69 <small class="period-text">/ mes</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Pago recurrente</span>
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 16 GB RAM / 6 vCPU</li>
+                                    <li><i class="fas fa-check-circle"></i> 320 GB NVMe</li>
+                                    <li><i class="fas fa-check-circle"></i> IP pública + Anti-DDoS</li>
+                                    <li><i class="fas fa-check-circle"></i> Dominio + SSL</li>
+                                    <li><i class="fas fa-check-circle"></i> Copias de seguridad diarias</li>
+                                    <li><i class="fas fa-check-circle"></i> Monitoreo 24/7 con alertas</li>
+                                    <li><i class="fas fa-check-circle"></i> Firewall perimetral</li>
+                                    <li><i class="fas fa-check-circle"></i> Zero Trust + Teleport</li>
+                                    <li><i class="fas fa-check-circle"></i> VPN de acceso administrativo</li>
+                                    <li><i class="fas fa-check-circle"></i> Logs centralizados y auditoría</li>
+                                    <li><i class="fas fa-check-circle"></i> Notificaciones (4,000 correos/mes)</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte IT 24/7</li>
+                                </ul>
+                                <button class="btn-subscribe" data-vps-plan="vps-a-monthly">
+                                    <i class="fas fa-credit-card"></i> Comprar Plan
+                                </button>
+                            </div>
+                            <div class="plan-card yearly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">AHORRA 23%</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-infinity"></i> Anual
+                                </div>
+                                <div class="plan-price" data-usd="$823" data-pen="S/8,230">
+                                    S/8,230 <small class="period-text">/ año</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Ahorro garantizado</span>
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 16 GB RAM / 6 vCPU</li>
+                                    <li><i class="fas fa-check-circle"></i> 320 GB NVMe</li>
+                                    <li><i class="fas fa-check-circle"></i> IP pública + Anti-DDoS</li>
+                                    <li><i class="fas fa-check-circle"></i> Dominio + SSL (12 meses)</li>
+                                    <li><i class="fas fa-check-circle"></i> Copias de seguridad diarias</li>
+                                    <li><i class="fas fa-check-circle"></i> Monitoreo 24/7 con alertas</li>
+                                    <li><i class="fas fa-check-circle"></i> Firewall perimetral</li>
+                                    <li><i class="fas fa-check-circle"></i> Zero Trust + Teleport</li>
+                                    <li><i class="fas fa-check-circle"></i> VPN de acceso administrativo</li>
+                                    <li><i class="fas fa-check-circle"></i> Logs centralizados y auditoría</li>
+                                    <li><i class="fas fa-check-circle"></i> Notificaciones (4,000 correos/mes)</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte IT 24/7 (12 meses)</li>
+                                </ul>
+                                <button class="btn-subscribe" data-vps-plan="vps-a-yearly">
+                                    <i class="fas fa-crown"></i> Comprar Plan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="planesVpsB" class="planes-container" style="display:none;">
+                        <div class="planes-header">
+                            <button class="btn-back" id="backFromVpsB"><i class="fas fa-arrow-left"></i> Volver</button>
+                            <h3>
+                                <span class="planes-header-icon">
+                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="6" y="10" width="52" height="18" rx="4" fill="currentColor"/>
+                                        <circle cx="38" cy="19" r="2.6" fill="#ffffff"/>
+                                        <circle cx="47" cy="19" r="2.6" fill="#ffffff"/>
+                                        <rect x="6" y="36" width="52" height="18" rx="4" fill="currentColor"/>
+                                        <circle cx="38" cy="45" r="2.6" fill="#ffffff"/>
+                                        <circle cx="47" cy="45" r="2.6" fill="#ffffff"/>
+                                    </svg>
+                                </span>
+                                VPS - Gestión Estándar
+                            </h3>
+                            <p>8 GB RAM / 4 vCPU / 160 GB NVMe</p>
+                        </div>
+                        <div class="pricing-grid">
+                            <div class="plan-card monthly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">MENSUAL</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-calendar-alt"></i> Mensual
+                                </div>
+                                <div class="plan-price" data-usd="$752" data-pen="S/752.16">
+                                    S/752.16 <small class="period-text">/ mes</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Pago recurrente</span>
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 8 GB RAM / 4 vCPU</li>
+                                    <li><i class="fas fa-check-circle"></i> 160 GB NVMe</li>
+                                    <li><i class="fas fa-check-circle"></i> IP pública + Anti-DDoS</li>
+                                    <li><i class="fas fa-check-circle"></i> Dominio + SSL</li>
+                                    <li><i class="fas fa-check-circle"></i> Copias de seguridad diarias</li>
+                                    <li><i class="fas fa-check-circle"></i> Monitoreo 24/7 con alertas</li>
+                                    <li><i class="fas fa-check-circle"></i> Firewall perimetral</li>
+                                    <li><i class="fas fa-check-circle"></i> Zero Trust + MFA</li>
+                                    <li><i class="fas fa-check-circle"></i> Logs centralizados</li>
+                                    <li><i class="fas fa-check-circle"></i> VPN de acceso administrativo</li>
+                                    <li><i class="fas fa-check-circle"></i> Notificaciones (4,000 correos/mes)</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte IT</li>
+                                </ul>
+                                <button class="btn-subscribe" data-vps-plan="vps-b-monthly">
+                                    <i class="fas fa-credit-card"></i> Comprar Plan
+                                </button>
+                            </div>
+                            <div class="plan-card yearly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">AHORRA 23%</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-infinity"></i> Anual
+                                </div>
+                                <div class="plan-price" data-usd="$695" data-pen="S/6,950">
+                                    S/6,950 <small class="period-text">/ año</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Ahorro garantizado</span>
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 8 GB RAM / 4 vCPU</li>
+                                    <li><i class="fas fa-check-circle"></i> 160 GB NVMe</li>
+                                    <li><i class="fas fa-check-circle"></i> IP pública + Anti-DDoS</li>
+                                    <li><i class="fas fa-check-circle"></i> Dominio + SSL (12 meses)</li>
+                                    <li><i class="fas fa-check-circle"></i> Copias de seguridad diarias</li>
+                                    <li><i class="fas fa-check-circle"></i> Monitoreo 24/7 con alertas</li>
+                                    <li><i class="fas fa-check-circle"></i> Firewall perimetral</li>
+                                    <li><i class="fas fa-check-circle"></i> Zero Trust + MFA</li>
+                                    <li><i class="fas fa-check-circle"></i> Logs centralizados</li>
+                                    <li><i class="fas fa-check-circle"></i> VPN de acceso administrativo</li>
+                                    <li><i class="fas fa-check-circle"></i> Notificaciones (4,000 correos/mes)</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte IT (12 meses)</li>
+                                </ul>
+                                <button class="btn-subscribe" data-vps-plan="vps-b-yearly">
+                                    <i class="fas fa-crown"></i> Comprar Plan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="planesVpsC" class="planes-container" style="display:none;">
+                        <div class="planes-header">
+                            <button class="btn-back" id="backFromVpsC"><i class="fas fa-arrow-left"></i> Volver</button>
+                            <h3>
+                                <span class="planes-header-icon">
+                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="6" y="8" width="52" height="26" rx="4" fill="currentColor"/>
+                                        <rect x="6" y="38" width="52" height="18" rx="4" fill="currentColor"/>
+                                        <circle cx="38" cy="47" r="3" fill="#ffffff"/>
+                                        <circle cx="47" cy="47" r="3" fill="#ffffff"/>
+                                    </svg>
+                                </span>
+                                VPS - Gestión Esencial
+                            </h3>
+                            <p>4 GB RAM / 2 vCPU / 80 GB NVMe</p>
+                        </div>
+                        <div class="pricing-grid">
+                            <div class="plan-card monthly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">MENSUAL</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-calendar-alt"></i> Mensual
+                                </div>
+                                <div class="plan-price" data-usd="$415" data-pen="S/414.50">
+                                    S/414.50 <small class="period-text">/ mes</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Pago recurrente</span>
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 4 GB RAM / 2 vCPU</li>
+                                    <li><i class="fas fa-check-circle"></i> 80 GB NVMe</li>
+                                    <li><i class="fas fa-check-circle"></i> IP pública dedicada</li>
+                                    <li><i class="fas fa-check-circle"></i> Dominio + SSL</li>
+                                    <li><i class="fas fa-check-circle"></i> Copias de seguridad diarias</li>
+                                    <li><i class="fas fa-check-circle"></i> Monitoreo 24/7</li>
+                                    <li><i class="fas fa-check-circle"></i> Firewall básico</li>
+                                    <li><i class="fas fa-check-circle"></i> Notificaciones (2,000 correos/mes)</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte IT</li>
+                                </ul>
+                                <button class="btn-subscribe" data-vps-plan="vps-c-monthly">
+                                    <i class="fas fa-credit-card"></i> Comprar Plan
+                                </button>
+                            </div>
+                            <div class="plan-card yearly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">AHORRA 23%</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-infinity"></i> Anual
+                                </div>
+                                <div class="plan-price" data-usd="$383" data-pen="S/3,830">
+                                    S/3,830 <small class="period-text">/ año</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Ahorro garantizado</span>
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 4 GB RAM / 2 vCPU</li>
+                                    <li><i class="fas fa-check-circle"></i> 80 GB NVMe</li>
+                                    <li><i class="fas fa-check-circle"></i> IP pública dedicada</li>
+                                    <li><i class="fas fa-check-circle"></i> Dominio + SSL (12 meses)</li>
+                                    <li><i class="fas fa-check-circle"></i> Copias de seguridad diarias</li>
+                                    <li><i class="fas fa-check-circle"></i> Monitoreo 24/7</li>
+                                    <li><i class="fas fa-check-circle"></i> Firewall básico</li>
+                                    <li><i class="fas fa-check-circle"></i> Notificaciones (2,000 correos/mes)</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte IT (12 meses)</li>
+                                </ul>
+                                <button class="btn-subscribe" data-vps-plan="vps-c-yearly">
+                                    <i class="fas fa-crown"></i> Comprar Plan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footnote">
+                        <i class="fas fa-shield-alt"></i> Todos los planes incluyen infraestructura de alta disponibilidad y seguridad perimetral
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div id="digitalizadorSection" class="digitalizador-container" style="display:none;">
+                    <div class="section-header">
+                        <h2><i class="fas fa-file-alt"></i> Digitalizador de Documentos</h2>
+                        <p>Software de escritorio para digitalización y gestión de documentos</p>
+                    </div>
+
+                    <div class="digitalizador-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-users"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Usuarios Activos</span>
+                                <span class="stat-value" id="digitalizadorUsers">1,247</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-file-pdf"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Documentos Procesados</span>
+                                <span class="stat-value" id="digitalizadorDocs">84,592</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-download"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Descargas</span>
+                                <span class="stat-value" id="digitalizadorDownloads">12,384</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-star"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Valoración</span>
+                                <span class="stat-value">4.9 <small>/ 5.0</small></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="digitalizador-features">
+                        <div class="feature-card">
+                            <i class="fas fa-robot"></i>
+                            <h4>Escaneo Inteligente con IA</h4>
+                            <p>Digitaliza documentos físicos con reconocimiento OCR avanzado e inteligencia artificial</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-folder-open"></i>
+                            <h4>Organización Automática</h4>
+                            <p>Clasifica y organiza documentos por tipo, fecha y contenido</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-search"></i>
+                            <h4>Búsqueda Avanzada</h4>
+                            <p>Encuentra cualquier documento en segundos con búsqueda por texto</p>
+                        </div>
+                    </div>
+
+                    <div class="digitalizador-type-selector">
+                        <h3>Selecciona el tipo de Digitalizador</h3>
+                        <p>Elige la versión que mejor se adapte a tus necesidades</p>
+                        <div class="type-grid">
+                            <div class="type-card" data-type="basico" id="typeBasico">
+                                <div class="type-icon"><i class="fas fa-file-excel"></i></div>
+                                <h4>Digitalizador Básico</h4>
+                                <div class="type-badge">BETA</div>
+                                <p>Digitaliza 1 página (Acta) y entrega en formato Excel</p>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> 1 página por documento</li>
+                                    <li><i class="fas fa-check-circle"></i> Formato Excel (.xlsx)</li>
+                                    <li><i class="fas fa-check-circle"></i> OCR básico</li>
+                                    <li><i class="fas fa-check-circle"></i> Interfaz simple</li>
+                                </ul>
+                                <button class="btn-select-type">Seleccionar</button>
+                            </div>
+                            <div class="type-card featured" data-type="avanzado" id="typeAvanzado">
+                                <div class="type-icon"><i class="fas fa-file-alt"></i></div>
+                                <h4>Digitalizador Avanzado</h4>
+                                <div class="type-badge premium">PREMIUM</div>
+                                <p>Digitaliza +5 páginas y consolida todo en un único archivo Excel</p>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> +5 páginas por documento</li>
+                                    <li><i class="fas fa-check-circle"></i> Consolidado en un solo Excel</li>
+                                    <li><i class="fas fa-check-circle"></i> OCR avanzado con IA</li>
+                                    <li><i class="fas fa-check-circle"></i> Interfaz profesional</li>
+                                    <li><i class="fas fa-check-circle"></i> Exportación múltiple</li>
+                                </ul>
+                                <button class="btn-select-type">Seleccionar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="planesBasico" class="planes-container" style="display:none;">
+                        <div class="planes-header">
+                            <button class="btn-back" id="backFromBasico"><i class="fas fa-arrow-left"></i> Volver</button>
+                            <h3><i class="fas fa-file-excel"></i> Digitalizador Básico - Planes</h3>
+                            <p>Elige tu plan para el Digitalizador Básico (Beta)</p>
+                        </div>
+                        <div class="pricing-grid">
+                            <div class="plan-card free">
+                                <div class="glow-ring"></div>
+                                <div class="plan-name">
+                                    <i class="fas fa-flask"></i> Prueba gratuita
+                                </div>
+                                <div class="plan-price" data-usd="$0" data-pen="S/0">
+                                    S/0 <small class="period-text">/ 5 días</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Validez 5 días</span>
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 1 página por documento</li>
+                                    <li><i class="fas fa-check-circle"></i> Formato Excel</li>
+                                    <li><i class="fas fa-check-circle"></i> OCR básico</li>
+                                    <li><i class="fas fa-check-circle"></i> 5 documentos / día</li>
+                                </ul>
+                                <button class="btn-subscribe" data-digitalizador-plan="basico-free">
+                                    <i class="fas fa-download"></i> Descargar gratis
+                                </button>
+                            </div>
+                            <div class="plan-card monthly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">MÁS POPULAR</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-calendar-alt"></i> Mensual
+                                </div>
+                                <div class="plan-price" data-usd="$800" data-pen="S/800">
+                                    S/800 <small class="period-text">/ mes</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Pago recurrente</span>
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 1 página por documento</li>
+                                    <li><i class="fas fa-check-circle"></i> Formato Excel</li>
+                                    <li><i class="fas fa-check-circle"></i> OCR básico</li>
+                                    <li><i class="fas fa-check-circle"></i> Documentos ilimitados</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte por email</li>
+                                </ul>
+                                <button class="btn-subscribe" data-digitalizador-plan="basico-monthly">
+                                    <i class="fas fa-shopping-cart"></i> Comprar ahora
+                                </button>
+                            </div>
+                            <div class="plan-card yearly">
+                                <div class="glow-ring"></div>
+                                <div class="plan-name">
+                                    <i class="fas fa-infinity"></i> Anual
+                                </div>
+                                <div class="plan-price" data-usd="$9,600" data-pen="S/9,600">
+                                    S/9,600 <small class="period-text">/ año</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Ahorra 33%</span>
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 1 página por documento</li>
+                                    <li><i class="fas fa-check-circle"></i> Formato Excel</li>
+                                    <li><i class="fas fa-check-circle"></i> OCR básico</li>
+                                    <li><i class="fas fa-check-circle"></i> Documentos ilimitados</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte prioritario</li>
+                                    <li><i class="fas fa-check-circle"></i> Actualizaciones gratuitas</li>
+                                </ul>
+                                <button class="btn-subscribe" data-digitalizador-plan="basico-yearly">
+                                    <i class="fas fa-crown"></i> Plan anual
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="planesAvanzado" class="planes-container" style="display:none;">
+                        <div class="planes-header">
+                            <button class="btn-back" id="backFromAvanzado"><i class="fas fa-arrow-left"></i> Volver</button>
+                            <h3><i class="fas fa-file-alt"></i> Digitalizador Avanzado - Planes</h3>
+                            <p>Elige tu plan para el Digitalizador Avanzado (Premium)</p>
+                        </div>
+                        <div class="pricing-grid">
+                            <div class="plan-card free">
+                                <div class="glow-ring"></div>
+                                <div class="plan-name">
+                                    <i class="fas fa-flask"></i> Prueba gratuita
+                                </div>
+                                <div class="plan-price" data-usd="$0" data-pen="S/0">
+                                    S/0 <small class="period-text">/ 7 días</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Validez 7 días</span>
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> +5 páginas por documento</li>
+                                    <li><i class="fas fa-check-circle"></i> Consolidado en un Excel</li>
+                                    <li><i class="fas fa-check-circle"></i> OCR avanzado con IA</li>
+                                    <li><i class="fas fa-check-circle"></i> 10 documentos / día</li>
+                                </ul>
+                                <button class="btn-subscribe" data-digitalizador-plan="avanzado-free">
+                                    <i class="fas fa-download"></i> Descargar gratis
+                                </button>
+                            </div>
+                            <div class="plan-card monthly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">MÁS POPULAR</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-calendar-alt"></i> Mensual
+                                </div>
+                                <div class="plan-price" data-usd="$1,800" data-pen="S/1,800">
+                                    S/1,800 <small class="period-text">/ mes</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Pago recurrente</span>
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> +5 páginas por documento</li>
+                                    <li><i class="fas fa-check-circle"></i> Consolidado en un Excel</li>
+                                    <li><i class="fas fa-check-circle"></i> OCR avanzado con IA</li>
+                                    <li><i class="fas fa-check-circle"></i> Documentos ilimitados</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte prioritario 24/7</li>
+                                </ul>
+                                <button class="btn-subscribe" data-digitalizador-plan="avanzado-monthly">
+                                    <i class="fas fa-shopping-cart"></i> Comprar ahora
+                                </button>
+                            </div>
+                            <div class="plan-card yearly">
+                                <div class="glow-ring"></div>
+                                <div class="plan-name">
+                                    <i class="fas fa-infinity"></i> Anual
+                                </div>
+                                <div class="plan-price" data-usd="$21,600" data-pen="S/21,600">
+                                    S/21,600 <small class="period-text">/ año</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Ahorra 32%</span>
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> +5 páginas por documento</li>
+                                    <li><i class="fas fa-check-circle"></i> Consolidado en un Excel</li>
+                                    <li><i class="fas fa-check-circle"></i> OCR avanzado con IA</li>
+                                    <li><i class="fas fa-check-circle"></i> Documentos ilimitados</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte dedicado 24/7</li>
+                                    <li><i class="fas fa-check-circle"></i> Actualizaciones gratuitas</li>
+                                    <li><i class="fas fa-check-circle"></i> Integración con sistemas</li>
+                                </ul>
+                                <button class="btn-subscribe" data-digitalizador-plan="avanzado-yearly">
+                                    <i class="fas fa-crown"></i> Plan anual
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="digitalizador-download">
+                        <div class="download-box">
+                            <i class="fas fa-desktop"></i>
+                            <h3>Descarga el software</h3>
+                            <p>Compatible con Windows 10/11, macOS y Linux</p>
+                            <div class="download-buttons">
+                                <button class="btn-download"><i class="fab fa-windows"></i> Windows</button>
+                                <button class="btn-download"><i class="fab fa-apple"></i> macOS</button>
+                                <button class="btn-download"><i class="fab fa-linux"></i> Linux</button>
+                            </div>
+                            <span class="version-info">Versión 3.2.1 - Última actualización: 15/09/2026</span>
+                        </div>
+                    </div>
+
+                    <div class="footnote">
+                        <i class="fas fa-code"></i> Software de escritorio para digitalización profesional
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div id="apisSection" class="pricing-container" style="display:none;">
+                    <div class="section-header">
+                        <h2>Elige tu plan ideal</h2>
+                        <p>Integración y despliegue en producción para todas las APIs</p>
+                    </div>
+                    <div class="pricing-grid" id="pricingGrid">
+                        <div class="plan-card free">
+                            <div class="glow-ring"></div>
+                            <div class="plan-name">
+                                <i class="fas fa-flask"></i> Prueba gratuita
+                            </div>
+                            <div class="plan-price" data-usd="$0" data-pen="S/0">
+                                $0 <small class="period-text">/ 7 días</small>
+                            </div>
+                            <div class="plan-desc">
+                                <span>Validez 7 días</span>
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> 5,000 solicitudes / día</li>
+                                <li><i class="fas fa-check-circle"></i> 3 endpoints principales</li>
+                                <li><i class="fas fa-check-circle"></i> Soporte por chat 24/7</li>
+                                <li><i class="fas fa-check-circle"></i> Integración básica</li>
+                            </ul>
+                            <button class="btn-subscribe" data-plan="free">
+                                <i class="fas fa-rocket"></i> Comenzar gratis
+                            </button>
+                        </div>
+                        <div class="plan-card monthly">
+                            <div class="glow-ring"></div>
+                            <div class="badge-popular">MÁS POPULAR</div>
+                            <div class="plan-name">
+                                <i class="fas fa-calendar-alt"></i> Mensual
+                            </div>
+                            <div class="plan-price" data-usd="$49" data-pen="S/185">
+                                $49 <small class="period-text">/ mes</small>
+                            </div>
+                            <div class="plan-desc">
+                                <span>Pago recurrente</span>
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> 100,000 solicitudes / día</li>
+                                <li><i class="fas fa-check-circle"></i> Acceso a todas las APIs</li>
+                                <li><i class="fas fa-check-circle"></i> Integración avanzada</li>
+                                <li><i class="fas fa-check-circle"></i> Soporte prioritario</li>
+                                <li><i class="fas fa-check-circle"></i> Webhooks y logs</li>
+                            </ul>
+                            <button class="btn-subscribe" data-plan="monthly">
+                                <i class="fas fa-credit-card"></i> Suscribirse
+                            </button>
+                        </div>
+                        <div class="plan-card yearly">
+                            <div class="glow-ring"></div>
+                            <div class="plan-name">
+                                <i class="fas fa-infinity"></i> Anual
+                            </div>
+                            <div class="plan-price" data-usd="$399" data-pen="S/1,450">
+                                $399 <small class="period-text">/ año</small>
+                            </div>
+                            <div class="plan-desc">
+                                <span>Ahorra 32%</span>
+                                <i class="fas fa-tags"></i>
+                            </div>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> 500,000 solicitudes / día</li>
+                                <li><i class="fas fa-check-circle"></i> Todas las APIs + premium</li>
+                                <li><i class="fas fa-check-circle"></i> Implementación en producción</li>
+                                <li><i class="fas fa-check-circle"></i> Asesoría dedicada</li>
+                                <li><i class="fas fa-check-circle"></i> SLA 99.9% garantizado</li>
+                                <li><i class="fas fa-check-circle"></i> Integración a medida</li>
+                            </ul>
+                            <button class="btn-subscribe" data-plan="yearly">
+                                <i class="fas fa-crown"></i> Plan anual
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="footnote">
+                        <i class="fas fa-code"></i> Integración y despliegue en sistemas productivos · APIs listas para escalar
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div id="landingSection" class="landing-container" style="display:none;">
+                    <div class="section-header">
+                        <h2><i class="fas fa-rocket"></i> Landing Pages Profesionales</h2>
+                        <p>Páginas de aterrizaje optimizadas para conversión y captación de clientes</p>
+                    </div>
+
+                    <div class="landing-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Tasa de Conversión</span>
+                                <span class="stat-value" id="landingConversion">12.4%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-eye"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Visitas Mensuales</span>
+                                <span class="stat-value" id="landingVisits">48,200</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Tiempo de Carga</span>
+                                <span class="stat-value">0.8s</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Responsive</span>
+                                <span class="stat-value">100%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="landing-features">
+                        <div class="feature-card">
+                            <i class="fas fa-paint-brush"></i>
+                            <h4>Diseño Personalizado</h4>
+                            <p>Diseño único y adaptado a tu marca con identidad visual propia</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h4>Optimización SEO</h4>
+                            <p>Estructura optimizada para motores de búsqueda y velocidad de carga</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-mouse-pointer"></i>
+                            <h4>Enfoque en Conversión</h4>
+                            <p>CTAs estratégicos, formularios optimizados y pruebas A/B</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>Analítica Integrada</h4>
+                            <p>Google Analytics, píxeles de seguimiento y reportes de rendimiento</p>
+                        </div>
+                    </div>
+
+                    <div class="landing-type-selector">
+                        <h3>Selecciona el tipo de Landing Page</h3>
+                        <p>Elige la versión que mejor se adapte a tus objetivos</p>
+                        <div class="type-grid">
+                            <div class="type-card" data-type="landing-basica" id="typeLandingBasica">
+                                <div class="type-icon"><i class="fas fa-file-code"></i></div>
+                                <h4>Landing Básica</h4>
+                                <div class="type-badge">ESENCIAL</div>
+                                <p>Página de aterrizaje de una sola sección con formulario de contacto</p>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> 1 sección (Hero + CTA)</li>
+                                    <li><i class="fas fa-check-circle"></i> Formulario de contacto</li>
+                                    <li><i class="fas fa-check-circle"></i> Diseño responsive</li>
+                                    <li><i class="fas fa-check-circle"></i> Hosting incluido (1 año)</li>
+                                    <li><i class="fas fa-check-circle"></i> Certificado SSL</li>
+                                </ul>
+                                <button class="btn-select-type">Seleccionar</button>
+                            </div>
+                            <div class="type-card featured" data-type="landing-profesional" id="typeLandingProfesional">
+                                <div class="type-icon"><i class="fas fa-laptop-code"></i></div>
+                                <h4>Landing Profesional</h4>
+                                <div class="type-badge premium">PREMIUM</div>
+                                <p>Página completa con múltiples secciones, blog y optimización avanzada</p>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Hasta 6 secciones</li>
+                                    <li><i class="fas fa-check-circle"></i> Blog integrado</li>
+                                    <li><i class="fas fa-check-circle"></i> SEO avanzado</li>
+                                    <li><i class="fas fa-check-circle"></i> Formularios múltiples</li>
+                                    <li><i class="fas fa-check-circle"></i> Hosting incluido (1 año)</li>
+                                    <li><i class="fas fa-check-circle"></i> Certificado SSL</li>
+                                    <li><i class="fas fa-check-circle"></i> Analítica integrada</li>
+                                </ul>
+                                <button class="btn-select-type">Seleccionar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="planesLandingBasica" class="planes-container" style="display:none;">
+                        <div class="planes-header">
+                            <button class="btn-back" id="backFromLandingBasica"><i class="fas fa-arrow-left"></i> Volver</button>
+                            <h3><i class="fas fa-file-code"></i> Landing Básica - Planes</h3>
+                            <p>Elige tu plan para la Landing Básica</p>
+                        </div>
+                        <div class="pricing-grid">
+                            <div class="plan-card monthly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">1 MES</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-calendar-alt"></i> 1 Mes
+                                </div>
+                                <div class="plan-price" data-usd="$299" data-pen="S/1,100">
+                                    S/1,100 <small class="period-text">/ mes</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Pago único</span>
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 1 sección (Hero + CTA)</li>
+                                    <li><i class="fas fa-check-circle"></i> Formulario de contacto</li>
+                                    <li><i class="fas fa-check-circle"></i> Diseño responsive</li>
+                                    <li><i class="fas fa-check-circle"></i> Hosting incluido</li>
+                                    <li><i class="fas fa-check-circle"></i> Certificado SSL</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte por email</li>
+                                </ul>
+                                <button class="btn-subscribe" data-landing-plan="landing-basica-1mes">
+                                    <i class="fas fa-credit-card"></i> Contratar
+                                </button>
+                            </div>
+                            <div class="plan-card featured-six">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">6 MESES</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-calendar-check"></i> 6 Meses
+                                </div>
+                                <div class="plan-price" data-usd="$1,499" data-pen="S/5,500">
+                                    S/5,500 <small class="period-text">/ 6 meses</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Ahorra 17%</span>
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 1 sección (Hero + CTA)</li>
+                                    <li><i class="fas fa-check-circle"></i> Formulario de contacto</li>
+                                    <li><i class="fas fa-check-circle"></i> Diseño responsive</li>
+                                    <li><i class="fas fa-check-circle"></i> Hosting incluido (6 meses)</li>
+                                    <li><i class="fas fa-check-circle"></i> Certificado SSL</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte prioritario</li>
+                                    <li><i class="fas fa-check-circle"></i> 1 ronda de cambios</li>
+                                </ul>
+                                <button class="btn-subscribe" data-landing-plan="landing-basica-6meses">
+                                    <i class="fas fa-credit-card"></i> Contratar
+                                </button>
+                            </div>
+                            <div class="plan-card yearly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">AHORRA 32%</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-infinity"></i> 1 Año
+                                </div>
+                                <div class="plan-price" data-usd="$2,450" data-pen="S/9,000">
+                                    S/9,000 <small class="period-text">/ año</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Ahorro garantizado</span>
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 1 sección (Hero + CTA)</li>
+                                    <li><i class="fas fa-check-circle"></i> Formulario de contacto</li>
+                                    <li><i class="fas fa-check-circle"></i> Diseño responsive</li>
+                                    <li><i class="fas fa-check-circle"></i> Hosting incluido (1 año)</li>
+                                    <li><i class="fas fa-check-circle"></i> Certificado SSL</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte prioritario</li>
+                                    <li><i class="fas fa-check-circle"></i> Actualizaciones gratuitas</li>
+                                </ul>
+                                <button class="btn-subscribe" data-landing-plan="landing-basica-1year">
+                                    <i class="fas fa-crown"></i> Contratar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="planesLandingProfesional" class="planes-container" style="display:none;">
+                        <div class="planes-header">
+                            <button class="btn-back" id="backFromLandingProfesional"><i class="fas fa-arrow-left"></i> Volver</button>
+                            <h3><i class="fas fa-laptop-code"></i> Landing Profesional - Planes</h3>
+                            <p>Elige tu plan para la Landing Profesional</p>
+                        </div>
+                        <div class="pricing-grid">
+                            <div class="plan-card monthly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">1 MES</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-calendar-alt"></i> 1 Mes
+                                </div>
+                                <div class="plan-price" data-usd="$599" data-pen="S/2,200">
+                                    S/2,200 <small class="period-text">/ mes</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Pago único</span>
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Hasta 6 secciones</li>
+                                    <li><i class="fas fa-check-circle"></i> Blog integrado</li>
+                                    <li><i class="fas fa-check-circle"></i> SEO avanzado</li>
+                                    <li><i class="fas fa-check-circle"></i> Formularios múltiples</li>
+                                    <li><i class="fas fa-check-circle"></i> Hosting incluido</li>
+                                    <li><i class="fas fa-check-circle"></i> Certificado SSL</li>
+                                    <li><i class="fas fa-check-circle"></i> Analítica integrada</li>
+                                </ul>
+                                <button class="btn-subscribe" data-landing-plan="landing-profesional-1mes">
+                                    <i class="fas fa-credit-card"></i> Contratar
+                                </button>
+                            </div>
+                            <div class="plan-card featured-six">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">6 MESES</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-calendar-check"></i> 6 Meses
+                                </div>
+                                <div class="plan-price" data-usd="$2,999" data-pen="S/11,000">
+                                    S/11,000 <small class="period-text">/ 6 meses</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Ahorra 17%</span>
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Hasta 6 secciones</li>
+                                    <li><i class="fas fa-check-circle"></i> Blog integrado</li>
+                                    <li><i class="fas fa-check-circle"></i> SEO avanzado</li>
+                                    <li><i class="fas fa-check-circle"></i> Formularios múltiples</li>
+                                    <li><i class="fas fa-check-circle"></i> Hosting incluido (6 meses)</li>
+                                    <li><i class="fas fa-check-circle"></i> Certificado SSL</li>
+                                    <li><i class="fas fa-check-circle"></i> Analítica integrada</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte prioritario 24/7</li>
+                                </ul>
+                                <button class="btn-subscribe" data-landing-plan="landing-profesional-6meses">
+                                    <i class="fas fa-credit-card"></i> Contratar
+                                </button>
+                            </div>
+                            <div class="plan-card yearly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">AHORRA 32%</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-infinity"></i> 1 Año
+                                </div>
+                                <div class="plan-price" data-usd="$4,900" data-pen="S/18,000">
+                                    S/18,000 <small class="period-text">/ año</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Ahorro garantizado</span>
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Hasta 6 secciones</li>
+                                    <li><i class="fas fa-check-circle"></i> Blog integrado</li>
+                                    <li><i class="fas fa-check-circle"></i> SEO avanzado</li>
+                                    <li><i class="fas fa-check-circle"></i> Formularios múltiples</li>
+                                    <li><i class="fas fa-check-circle"></i> Hosting incluido (1 año)</li>
+                                    <li><i class="fas fa-check-circle"></i> Certificado SSL</li>
+                                    <li><i class="fas fa-check-circle"></i> Analítica integrada</li>
+                                    <li><i class="fas fa-check-circle"></i> Soporte prioritario 24/7</li>
+                                </ul>
+                                <button class="btn-subscribe" data-landing-plan="landing-profesional-1year">
+                                    <i class="fas fa-crown"></i> Contratar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footnote">
+                        <i class="fas fa-rocket"></i> Landing pages optimizadas para convertir visitantes en clientes
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div id="hostingSection" class="hosting-container" style="display:none;">
+                    <div class="section-header">
+                        <h2><i class="fas fa-globe"></i> Hosting Web</h2>
+                        <p>Alojamiento web rápido, seguro y escalable para tu proyecto</p>
+                    </div>
+
+                    <div class="hosting-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-server"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Uptime Garantizado</span>
+                                <span class="stat-value">99.9%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Velocidad de Carga</span>
+                                <span class="stat-value">0.5s</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Seguridad</span>
+                                <span class="stat-value">WAF + SSL</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-headset"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Soporte</span>
+                                <span class="stat-value">24/7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hosting-features">
+                        <div class="feature-card">
+                            <i class="fas fa-bolt"></i>
+                            <h4>NVMe SSD</h4>
+                            <p>Almacenamiento ultrarrápido para máximo rendimiento</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-lock"></i>
+                            <h4>SSL Gratuito</h4>
+                            <p>Certificado SSL incluido en todos los planes</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Correo Corporativo</h4>
+                            <p>Cuentas de correo profesionales con tu dominio</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-database"></i>
+                            <h4>Backups Diarios</h4>
+                            <p>Copias de seguridad automáticas cada 24 horas</p>
+                        </div>
+                    </div>
+
+                    <div class="hosting-type-selector">
+                        <h3>Selecciona el tipo de Hosting</h3>
+                        <p>Elige la versión que mejor se adapte a tu proyecto</p>
+                        <div class="type-grid">
+                            <div class="type-card" data-type="hosting-basico" id="typeHostingBasico">
+                                <div class="type-icon"><i class="fas fa-hdd"></i></div>
+                                <h4>Hosting Básico</h4>
+                                <div class="type-badge">ESENCIAL</div>
+                                <p>Ideal para sitios web personales y pequeños proyectos</p>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Periodo de 12 meses</li>
+                                    <li><i class="fas fa-check-circle"></i> Nombre del dominio</li>
+                                    <li><i class="fas fa-check-circle"></i> Protección de privacidad de dominio</li>
+                                </ul>
+                                <button class="btn-select-type">Ver Planes</button>
+                            </div>
+                            <div class="type-card featured" data-type="hosting-premium" id="typeHostingPremium">
+                                <div class="type-icon"><i class="fas fa-crown"></i></div>
+                                <h4>Hosting Premium</h4>
+                                <div class="type-badge premium">RECOMENDADO</div>
+                                <p>Perfecto para empresas y sitios con alto tráfico</p>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Periodo de 12 meses</li>
+                                    <li><i class="fas fa-check-circle"></i> Backup diario</li>
+                                    <li><i class="fas fa-check-circle"></i> Nombre de dominio</li>
+                                    <li><i class="fas fa-check-circle"></i> Protección de privacidad de dominio</li>
+                                </ul>
+                                <button class="btn-select-type">Ver Planes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="planesHostingBasico" class="planes-container" style="display:none;">
+                        <div class="planes-header">
+                            <button class="btn-back" id="backFromHostingBasico"><i class="fas fa-arrow-left"></i> Volver</button>
+                            <h3><i class="fas fa-hdd"></i> Hosting Básico - Planes</h3>
+                            <p>Elige tu plan de Hosting Básico</p>
+                        </div>
+                        <div class="pricing-grid">
+                            <div class="plan-card monthly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">MENSUAL</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-calendar-alt"></i> Mensual
+                                </div>
+                                <div class="plan-price" data-usd="$55" data-pen="S/55">
+                                    S/55 <small class="period-text">/ mes</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Pago recurrente</span>
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Periodo de 1 mes</li>
+                                    <li><i class="fas fa-check-circle"></i> Nombre del dominio</li>
+                                    <li><i class="fas fa-check-circle"></i> Protección de privacidad de dominio</li>
+                                </ul>
+                                <button class="btn-subscribe" data-hosting-plan="hosting-basico-monthly">
+                                    <i class="fas fa-credit-card"></i> Contratar
+                                </button>
+                            </div>
+                            <div class="plan-card yearly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">ANUAL</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-infinity"></i> Anual
+                                </div>
+                                <div class="plan-price" data-usd="$150" data-pen="S/550">
+                                    S/550 <small class="period-text">/ año</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Pago único anual</span>
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Periodo de 12 meses</li>
+                                    <li><i class="fas fa-check-circle"></i> Nombre del dominio</li>
+                                    <li><i class="fas fa-check-circle"></i> Protección de privacidad de dominio</li>
+                                </ul>
+                                <button class="btn-subscribe" data-hosting-plan="hosting-basico-yearly">
+                                    <i class="fas fa-credit-card"></i> Contratar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="planesHostingPremium" class="planes-container" style="display:none;">
+                        <div class="planes-header">
+                            <button class="btn-back" id="backFromHostingPremium"><i class="fas fa-arrow-left"></i> Volver</button>
+                            <h3><i class="fas fa-crown"></i> Hosting Premium - Planes</h3>
+                            <p>Elige tu plan de Hosting Premium</p>
+                        </div>
+                        <div class="pricing-grid">
+                            <div class="plan-card monthly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">MENSUAL</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-calendar-alt"></i> Mensual
+                                </div>
+                                <div class="plan-price" data-usd="$90" data-pen="S/90">
+                                    S/90 <small class="period-text">/ mes</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Pago recurrente</span>
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Periodo de 1 mes</li>
+                                    <li><i class="fas fa-check-circle"></i> Backup diario</li>
+                                    <li><i class="fas fa-check-circle"></i> Nombre de dominio</li>
+                                    <li><i class="fas fa-check-circle"></i> Protección de privacidad de dominio</li>
+                                </ul>
+                                <button class="btn-subscribe" data-hosting-plan="hosting-premium-monthly">
+                                    <i class="fas fa-credit-card"></i> Contratar
+                                </button>
+                            </div>
+                            <div class="plan-card yearly">
+                                <div class="glow-ring"></div>
+                                <div class="badge-popular">ANUAL</div>
+                                <div class="plan-name">
+                                    <i class="fas fa-infinity"></i> Anual
+                                </div>
+                                <div class="plan-price" data-usd="$250" data-pen="S/900">
+                                    S/900 <small class="period-text">/ año</small>
+                                </div>
+                                <div class="plan-desc">
+                                    <span>Pago único anual</span>
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Periodo de 12 meses</li>
+                                    <li><i class="fas fa-check-circle"></i> Backup diario</li>
+                                    <li><i class="fas fa-check-circle"></i> Nombre de dominio</li>
+                                    <li><i class="fas fa-check-circle"></i> Protección de privacidad de dominio</li>
+                                </ul>
+                                <button class="btn-subscribe" data-hosting-plan="hosting-premium-yearly">
+                                    <i class="fas fa-credit-card"></i> Contratar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footnote">
+                        <i class="fas fa-globe"></i> Hosting rápido, seguro y escalable para tu presencia online
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div id="analiticaSection" style="display:none; text-align:center; padding:4rem 0;">
+                    <i class="fas fa-chart-line" style="font-size:4rem; color:var(--text-secondary); opacity:0.3;"></i>
+                    <h2 style="color:var(--text-secondary); margin-top:1rem;">Analítica</h2>
+                    <p style="color:var(--text-secondary);">Métricas y estadísticas de uso</p>
+                </div>
+
+                <div id="configuracionSection" style="display:none; text-align:center; padding:4rem 0;">
+                    <i class="fas fa-cog" style="font-size:4rem; color:var(--text-secondary); opacity:0.3;"></i>
+                    <h2 style="color:var(--text-secondary); margin-top:1rem;">Configuración</h2>
+                    <p style="color:var(--text-secondary);">Ajustes del sistema</p>
+                </div>
+
+            </section>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="logo-svg small">
+                            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="4" width="52" height="52" rx="12" stroke="currentColor" stroke-width="2.5"/>
+                                <path d="M30 8 L30 52 M8 30 L52 30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <circle cx="30" cy="30" r="10" stroke="currentColor" stroke-width="2.5"/>
+                                <path d="M20 20 L40 40 M20 40 L40 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        Delta Software E.I.R.L
+                    </div>
+                    <div class="footer-links">
+                        <a href="#"><i class="fas fa-shield-alt"></i> Privacidad</a>
+                        <a href="#"><i class="fas fa-file-contract"></i> Términos</a>
+                        <a href="#"><i class="fas fa-headset"></i> Soporte</a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="footer-copy">
+                        &copy; 2026 Delta Software E.I.R.L. Todos los derechos reservados.
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-receipt"></i></div>
+                <h3>Resumen de Compra</h3>
+                <p id="modalSubtitle">Detalle del plan seleccionado</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-row">
+                    <span class="modal-label">Producto</span>
+                    <span class="modal-value" id="modalProducto">-</span>
+                </div>
+                <div class="modal-row">
+                    <span class="modal-label">Periodo</span>
+                    <span class="modal-value" id="modalPeriodo">-</span>
+                </div>
+                <div class="modal-row">
+                    <span class="modal-label">Precio con IGV (18%)</span>
+                    <span class="modal-value" id="modalPrecioIGV">-</span>
+                </div>
+                <div class="modal-divider"></div>
+                <div class="modal-row subtotal">
+                    <span class="modal-label">Subtotal (sin IGV)</span>
+                    <span class="modal-value" id="modalSubtotal">-</span>
+                </div>
+                <div class="modal-row igv">
+                    <span class="modal-label">IGV (18%)</span>
+                    <span class="modal-value" id="modalIGV">-</span>
+                </div>
+                <div class="modal-total">
+                    <span>Total a pagar</span>
+                    <span id="modalTotal">-</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal-cancel" id="modalCancel"><i class="fas fa-times"></i> Cancelar</button>
+                <button class="btn-modal-confirm" id="modalConfirm"><i class="fas fa-check"></i> Confirmar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <script src="js/index.js"></script>
+</body>
+</html>
